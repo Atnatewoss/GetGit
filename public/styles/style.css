@@ -1,0 +1,346 @@
+:root {
+    --base-bg-color: #f8f9fa; /* Light background color */
+    --base-text-color: #212529; /* Darker text color */
+    --secondary-text-color: #6c757d; /* Muted text */
+    --accent-color: #96a9bd; /* Blue accent */
+    --button-bg-color: #007bff; /* Primary button color */
+    --button-bg-hover: #0056b3; /* Hover button color */
+    --input-border: #ced4da; /* Input border */
+    --header-bg-color: #ffffff; /* Header background */
+    --footer-bg-color: #f1f3f5; /* Footer background */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--base-bg-color); 
+    color: var(--base-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100dvh;
+}
+
+h1,h2,h3 {
+    color: var(--base-text-color);
+}
+
+p {
+    color: var(--secondary-text-color);
+}
+
+button {
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.04);
+}
+
+button:active {
+    transform: scale(1.05);
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+/* Header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    border-bottom: 1px solid var(--input-border);
+    width: 86%;
+    height: 72.5px;
+    padding: 0.9rem 0;
+}
+
+header h1 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+header button {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Toggle mode styling */
+body.dark-mode {
+    background-color: var(--base-bg-color);
+    color: #fff;
+  }
+  
+  label.darkMode-label{
+    height: 25px;
+    width: 60px;
+    display: block;
+    border-radius: 25px;
+    background-color: aliceblue;
+    box-shadow: inset 0px 2px 7px rgba(0, 0, 0, 0.4), inset 0 -2px 7px rgba(255, 255, 255, 0.4);
+    transition: 0.3s;
+    cursor: pointer;
+    margin: auto;
+  }
+  
+  label::after {
+    content: "";
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: relative;
+    top: 2px;
+    left: 3px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+  }
+  
+  .darkMode-container input {
+    display: none;
+  }
+  
+  input:checked + label {
+    background-color: #242424;
+  }
+  
+  input:checked + label:after {
+    left: 56px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+  }
+  
+  label:active:after {
+    width: 30px;
+  }
+
+/* Popup section */
+main {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45.7px;
+}
+
+.popUp {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    justify-content: space-between;
+    max-width: 500px;
+    padding: 2.1rem 0.3rem;
+    margin-bottom: 25.5px;
+    border-radius: 21px;
+}
+
+.popUp-header {
+    display: flex;
+    justify-content: space-between; 
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 36px;
+}
+
+.popUp-header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1rem;
+}
+
+.popUp-header-left h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.popUp-header-left p {
+    font-size: 0.9rem;
+}
+
+.popUp-header-right {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.popUp-header-right p {
+    text-decoration: underline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
+    font-weight: light;
+}
+
+.popUp-desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 4.7px;
+}
+
+.popUp-desc img {
+    width: 34px;
+    height: 34px;
+    margin-right: 0.5rem;
+    padding: 0.2rem;
+}
+
+.github-logo {
+    border: 2px solid grey;
+}
+
+.popUp-desc input {
+    border: 1px solid var(--secondary-text-color);
+    color: var(--base-text-color);
+    background-color: var(--base-bg-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.89rem;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 0.38rem;
+    width: 250px;
+}
+
+.popUp-desc input:focus {
+    border-color: var(--accent-color);
+}
+
+input:disabled {
+    background-color: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+    filter: blur(1px);
+}
+
+.error {
+    position: absolute;
+    color: red;
+    font-size: 8.79px;
+    margin-top: 50.8px;
+    margin-left: 42.8px;
+}
+
+.popUp-desc button {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.submit-img {
+    width: 34px;
+    height: 34px;
+    margin-right: 0.5rem;
+    padding: 0.2rem;
+}
+
+.bottom-p-tag {
+    text-align: center;
+    font-size: 0.646rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 16px;
+    margin-top: 15px;
+}
+
+/* Popup section Footer */
+.popUp-section-footer {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 49px;
+    padding-bottom: 1.2rem; 
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popUp-section-footer ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.popUp-section-footer li {
+    margin-right: 16px;
+    font-size: 0.7rem;
+    color: var(--base-bg-color);
+}
+
+.popUp-section-footer li a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+}
+
+.popUp-section-footer li i {
+    margin-right: 4px;
+    color: #121212;
+}
+
+.popUp-section-footer p {
+    font-size: 0.6rem;
+    color: var(--secondary-text-color);
+    
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode form {
+    border: 1px solid #333;
+}
+
+body.dark-mode form input, body.dark-mode form textarea {
+    background-color: #121212;
+    border-color: #B3B3B3;
+    color: #e0e0e0;
+}
+
+body.dark-mode #submit-btn {
+    color: #ffffff;
+}
+
+body.dark-mode footer {
+    color: #888;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .popUp {
+        width: 78%;
+    }
+
+    .popUp-desc input {
+        width: 60%;
+    }
+}
+

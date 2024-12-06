@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/webp" href="images/GetGit.webp" style="border-radius: 50%">
+    <title>GetGit</title>
+    <link rel="stylesheet" href="./public/styles/displayPage.css">
+    <link rel="stylesheet" href="./public/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="getGit">GetGit</h1>
+        <div class="darkMode-container">
+            <input id="darkMode-button" type="checkbox" onchange="toggleDarkMode()">
+            <label class="darkMode-label" for="darkMode-button"></label>
+        </div>
+    </header>
+
+    <main>
+
+        <div id="avatar-stats-container">
+            <!-- Avatar -->
+            <div id="avatar-container">
+                <img id="minecraft-body" alt="User Avatar" />
+            </div>
+
+
+            <!-- Stats -->
+            <div id="stats-container">
+                <div class="profile-info">
+                    <div class="avatar">
+                        <img id="github-pfp" src="" alt="User Profile" class="avatar-img">
+                    </div>
+                    <div class="profile-details">
+                        <p id="github-name" class="profile-name">Name: Loading...</p>
+                        <p id="github-hireable" class="profile-hireable">Hireable: Loading...</p>
+                        <p id="github-location" class="profile-location">Location: Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Grid Stats -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <p class="stat-title">Top Repository</p>
+                        <p id="top-contributions" class="stat-value">Loading...</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-title">Repositories</p>
+                        <p id="github-repos" class="stat-value">Loading...</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-title">Followers</p>
+                        <p id="github-followers" class="stat-value">Loading...</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-title">Following</p>
+                        <p id="github-following" class="stat-value">Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="additional-info">
+                    <p id="github-created-at" class="desc-item">
+                        <i class="fa fa-calendar"></i> Active Since: Loading...
+                    </p>
+    
+                    <a href="#" id="github-link" class="view-github-btn" target="_blank">
+                        <i class="fab fa-github"></i> View GitHub
+                    </a>    
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="popUp-section-footer">
+        <div class="footer-wrapper">
+            <ul>
+                <li id="gitHub"><a href="https://github.com/atnatewoss" target="_blank"><i class="fab fa-github"></i>Github</a></li>
+                <li id="linkedIn"><a href="https://linkedin.com/in/atnatewoshailealem" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+                <li id="email"><a href="mailto:atnatewoshailealemwk@gmail.com"><i class="fas fa-envelope"></i>Email</a></li>
+            </ul>
+            <p id="copyRight">Made by Atnatewos Hailealem</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./public/scripts/displayPage.js"></script>
+</body>
+</html>
