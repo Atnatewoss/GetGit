@@ -2,18 +2,34 @@
     "version": 2,
     "builds": [
       {
-        "src": "./src/server.js",
+        "src": "src/server.js",
         "use": "@vercel/node"
+      },
+      {
+        "src": "index.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "displayPage.html",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/"
+        "src": "/validate-username",
+        "dest": "src/server.js"
+      },
+      {
+        "src": "/",
+        "dest": "/index.html"
       },
       {
         "src": "/displayPage",
-        "dest": "/"
+        "dest": "/displayPage.html"
+      },
+      {
+        "src": "/public/(.*)",
+        "dest": "/public/$1"
       }
     ]
   }
