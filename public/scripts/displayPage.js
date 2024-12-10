@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("darkMode-button").checked = (savedTheme === "dark");
 });
 
-// document.addEventListener("close", localStorage.clear());
 
 // Toggle dark mode functionality
 function toggleDarkMode() {
     const isDarkMode = document.body.classList.toggle("dark-mode");
-    document.body.classList.toggle("light-mode", !isDarkMode);
+    document.body.classList.toggle("light-mode", isDarkMode);
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 }
 
@@ -34,7 +33,6 @@ async function getMinecraftBody() {
     const url = `https://crafatar.com/renders/body/${randomUUID}`;
     
     try {
-        // document.getElementById("loading").style.display = "block";
         const response = await fetch(url);
         if (!response.ok) throw new Error("Image not found");
 
@@ -114,8 +112,6 @@ async function updateStats() {
             const options = { year: 'numeric', month: 'short', day: 'numeric' };
             const formattedDate = new Date(userData.created_at).toLocaleDateString('en-US', options);
             createdAtElement.innerHTML = `<i class="fas fa-calendar-alt"></i> Joined on ${formattedDate}`;
-            createdAtElement.style.fontSize = "0.8rem"; // Make it subtle
-            createdAtElement.style.color = "#B3B3B3"; // Secondary text color
         } else {
             createdAtElement.textContent = "Join date not available";
         }

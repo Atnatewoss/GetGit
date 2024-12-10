@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Toggle dark mode functionality
 function toggleDarkMode() {
-    const isDarkMode = document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.documentElement.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode", !isDarkMode);
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 }

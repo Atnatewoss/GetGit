@@ -1,23 +1,60 @@
 :root {
-    --base-color: #121212; 
+    /* Colors */
+    --body-bg-color: #FAFAFA;
     --accent-color: #4A90E2;
-    --text-color: #EAEAEA;
-    --secondary-text: #B3B3B3;
-    --button-bg: #0056A0; /* Button background */
-    --button-bg-hover: #004480; /* Button hover color */
-    --shadow: rgba(0, 0, 0, 0.1); /* Soft shadow */
+    --logo-color: #333333;
+    --text-color: #333333;
+    --secondary-text-color: #757575;
+    --button-bg: #0056A0;
+    --button-bg-hover: #004480;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --minecraft-avatar-box-shadow-color:rgba(74, 144, 226, 0.46);
+    --stats-container-bg-color: #F5F5F5;
+    --stat-item-bg-color: #F0F0F0;
+    --footer-icon-color: #424242;
+    --footer-text-color: #757575;
+    --footer-text-color-hover: #000000; 
 }
 
+body.dark-mode {
+    /* Dark Mode Colors */
+    --body-bg-color: #121212;
+    --logo-color: #E0E0E0;
+    --accent-color: #4A90E2;
+    --text-color: #E0E0E0;
+    --secondary-text-color: #AAAAAA;
+    --button-bg: #0060D5;
+    --button-bg-hover: #004480;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --minecraft-avatar-box-shadow-color: rgba(0, 102, 214, 0.23);
+    --stats-container-bg-color: #2A2A2A;
+    --stat-item-bg-color: #444444;
+    --footer-icon-color: #E0E0E0;
+    --footer-text-color: #999999;
+    --footer-text-color-hover: #FFFFFF; 
+}
+
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
 main {
     display: flex;
     flex-grow: 1;
-    margin-bottom: 70px;
+    justify-content: center;
+    margin-bottom: 67px;
 }
 
 /* Avatar Rotation */
@@ -35,7 +72,7 @@ main {
     height: 300px;
     animation: rotate 8s linear infinite;
     transform-origin: center;
-    filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.7));
+    filter: drop-shadow(0 0 15px var(--minecraft-avatar-box-shadow-color));
 }
 
 /* Keyframes for 3D rotation */
@@ -60,7 +97,7 @@ main {
 
 /* Stats Container */
 #stats-container {
-    background-color: #1E1E1E;
+    background-color: var(--stats-container-bg-color);
     color: var(--text-color);
     padding: 15px;
     border-radius: 10px;
@@ -80,7 +117,7 @@ main {
 
 .avatar {
     margin-right: 15px;
-    width: 54px;
+    width: 60px;
 }
 
 .avatar-img {
@@ -120,12 +157,11 @@ main {
 }
 
 .stat-item {
-    background-color: #292929;
+    background-color: var(--stat-item-bg-color);
     color: var(--text-color);
-    border: 1px solid #444;
     padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px var(--shadow);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow);
     text-align: center;
     transition: transform 0.2s ease-in-out;
     max-height: 120px;
@@ -133,17 +169,17 @@ main {
 
 .stat-item:hover {
     transform: translateY(-5px);
-    background-color: #383838;
 }
 
 .stat-title {
     font-size: 0.9rem;
-    color: var(--secondary-text);
+    color: var(--secondary-text-color);
     margin-bottom: 4px;
 }
 
 .stat-value {
-    font-size: 0.85rem; /* Slightly smaller text */
+    color: var(--text-color);
+    font-size: 0.85rem;
     max-height: 3.2em; /* Ensure content fits within three lines */
     text-overflow: ellipsis; /* Add ellipsis for overflow */
 }
@@ -152,16 +188,16 @@ main {
 .additional-info {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content */
-    gap: 10px; /* Add spacing between items */
+    align-items: center;
+    gap: 10px;
     padding: 15px;
-    background-color: transparent; /* Blend into the background */
+    background-color: transparent;
 }
 
 /* Style for each desc-item */
 .additional-info .desc-item {
     font-size: 16px;
-    color: #ddd;
+    color: var(--text-color);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -176,7 +212,7 @@ main {
 /* Subtle styling for "Joined on" text */
 #github-created-at {
     font-size: 0.8rem;
-    color: var(--secondary-text);
+    color: var(--secondary-text-color);
 }
 
 /* GitHub button styling */
@@ -184,9 +220,9 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    background-color: #0366d6;
-    color: white;
+    font-size: 12px;
+    background-color: var(--button-bg);
+    color: #FFF;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 102, 214, 0.5);
     text-decoration: none;
@@ -197,7 +233,11 @@ main {
 }
 
 .view-github-btn:hover {
-    background-color: #024bb5;
+    background-color: var(--button-bg-hover);
+}
+
+.view-github-btn:active {
+    transform: scale(1.05);
 }
 
 .view-github-btn i {

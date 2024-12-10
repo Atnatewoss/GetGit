@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/webp" href="images/GetGit.webp" style="border-radius: 50%">
+    <link rel="icon" type="image/webp" href="./public/images/circular_logo_for_GetGit.png" style="border-radius: 50%">
     <title>GetGit</title>
     <link rel="stylesheet" href="./public/styles/style.css">
+    <link rel="stylesheet" href="./public/styles/toggle.css">
 </head>
 <body>
     <header>
-        <h1 id="getGit">GetGit</h1>
-        <div class="darkMode-container">
+        <h1 class="logo">Get<span class="highlight">Git</span></h1>        <div class="darkMode-container">
             <input id="darkMode-button" type="checkbox" onchange="toggleDarkMode()">
             <label class="darkMode-label" for="darkMode-button"></label>
         </div>
@@ -21,32 +21,28 @@
     <main>
         <div class="popUp">
             <div class="popUp-header">
-                <div class="popUp-header-left">
-                    <h2>Welcome to GetGit!</h2>
-                    <p>Create your own personalized GitHub avatar.</p>
-                </div>
-                <div class="popUp-header-right">
-                    <p class="skip-btn"></p>
-                </div>
+                <h2>Welcome to GetGit!</h2>
+                <p>Create your personalized GitHub avatar.</p>
             </div>
 
             <form id="usernameForm" class="popUp-desc">
-                <img src="../public/images/github.jpg" alt="" class="github-logo">
-                <input placeholder="Enter your GitHub username..." id="username">
-                <button id="submit-btn" type="submit">
-                    <img src="../public/images/generate-avatar.png" alt="" class="submit-img">
-                </button>
-
+                <div class="form-header">
+                    <img src="../public/images/github.jpg" alt="" class="github-logo">
+                    <input placeholder="Enter your GitHub username..." id="username" required>
+                    <button id="submit-btn" type="submit">
+                        <img src="../public/images/generate-avatar.png" alt="" class="submit-img">
+                    </button>
+                </div>
                 <p class="error" id="error-message" style="display: none;">Invalid username. Please try again.</p>
             </form>
 
-            <p class="bottom-p-tag">The username will be used to create your unique avatar. Let’s get started!</p>
+            <p class="bottom-p-tag">This username will generate your unique avatar. Let’s get started!</p>
         </div>
     </main>
 
-    <footer class="popUp-section-footer">
+    <footer>
         <div class="footer-wrapper">
-            <ul>
+            <ul class="social-links">
                 <li id="gitHub"><a href="https://github.com/atnatewoss" target="_blank"><i class="fab fa-github"></i>Github</a></li>
                 <li id="linkedIn"><a href="https://linkedin.com/in/atnatewoshailealem" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
                 <li id="email"><a href="mailto:atnatewoshailealemwk@gmail.com"><i class="fas fa-envelope"></i>Email</a></li>
@@ -54,6 +50,7 @@
             <p id="copyRight">Made by Atnatewos Hailealem</p>
         </div>
     </footer>
+
     <script src="./public/scripts/script.js"></script>
 </body>
 </html>
