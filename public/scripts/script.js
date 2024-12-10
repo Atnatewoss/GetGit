@@ -54,7 +54,7 @@ document.getElementById("usernameForm").addEventListener("submit", async (event)
 
     try {
         console.log("Before sending.")
-        const response = await fetch('http://localhost:3000/validate-username', {
+        const response = await fetch('getgit-ashy.vercel.app', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
