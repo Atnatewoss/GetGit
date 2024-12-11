@@ -1,7 +1,7 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const axios = require("axios");
-const path = require("path");
 require("dotenv").config({ path: "./.env" });
 
 const app = express();
@@ -9,14 +9,14 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-
-// Serve static files from the "public" folder
-app.use(express.static(path.join(__dirname, "public")));
-
 app.use(cors());
 
+// Serve static files (HTML, CSS, JS) from the "public" folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Serve the index.html when accessing the root
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 app.post("/validate-username", async (req, res) => {
