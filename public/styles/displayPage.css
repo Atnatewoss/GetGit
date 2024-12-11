@@ -135,7 +135,7 @@ main {
 .profile-name, .profile-hireable, .profile-location {
     font-size: 0.8rem;
     color: var(--text-color);
-    margin: 4px 0;
+    margin: 4px 0 8px 0;
 }
 
 .profile-hireable {
@@ -143,9 +143,14 @@ main {
     font-size: 0.66rem;
 }
 
+.profile-location {
+    display: flex;
+    align-items: center;
+}
+
 .location-icon {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
 }
 
 /* Stats Grid */

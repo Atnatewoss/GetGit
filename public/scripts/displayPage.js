@@ -98,7 +98,7 @@ async function updateStats() {
 
         const locationElement = document.getElementById("github-location");
         if (userData.location) {
-            locationElement.innerHTML = `<img src="../public/images/location.png" alt="" class="location-icon"> ${userData.location}`;
+            locationElement.innerHTML = `<img src="./images/location.png" alt="" class="location-icon"> ${userData.location}`;
         } else {
             const locationElementParent = document.querySelector(".profile-details");
             locationElementParent.style.position = "relative";

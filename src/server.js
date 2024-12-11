@@ -1,15 +1,23 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
+const path = require("path");
 require("dotenv").config({ path: "./.env" });
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-app.use(express.static("public"));
+
+// Serve static files from the "public" folder
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use(cors());
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 app.post("/validate-username", async (req, res) => {
     console.log("Received request to validate username:", req.body);
@@ -24,8 +32,6 @@ app.post("/validate-username", async (req, res) => {
         const url = `https://api.github.com/users/${username}`;
         const headers = { Authorization: `token ${process.env.GITHUB_TOKEN}` };
 
-        console.log("Environment Variables Loaded:");
-        console.log("GitHub Token:", process.env.GITHUB_TOKEN); // Debug line
         console.log("Sending request to GitHub API:", url);
 
         const response = await axios.get(url, { headers });
@@ -45,5 +51,5 @@ app.post("/validate-username", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
