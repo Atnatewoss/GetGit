@@ -12,11 +12,11 @@ app.use(express.json());
 app.use(cors());
 
 // Serve static files (HTML, CSS, JS) from the "public" folder
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 // Serve the index.html when accessing the root
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+    res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 
 app.post("/validate-username", async (req, res) => {
