@@ -54,7 +54,7 @@ document.getElementById("usernameForm").addEventListener("submit", async (event)
 
     try {
         console.log("Before sending.")
-        const response = await fetch('https://getgit-ashy.vercel.app', {
+        const response = await fetch('/validate-username', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ document.getElementById("usernameForm").addEventListener("submit", async (event)
 
         if (response.ok) {
             window.localStorage.setItem('userData', JSON.stringify(result));
-            window.location.href = '../displayPage.html';
+            window.location.href = './displayPage.html';
         } else {
             // Handle errors returned by the server
             if (response.status === 404){

@@ -1,36 +1,6 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "src/server.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "index.html",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "displayPage.html",
-        "use": "@vercel/static"
-      }
-    ],
     "routes": [
-      {
-        "src": "/validate-username",
-        "dest": "src/server.js"
-      },
-      {
-        "src": "/",
-        "dest": "/index.html"
-      },
-      {
-        "src": "/displayPage",
-        "dest": "/displayPage.html"
-      },
-      {
-        "src": "/public/(.*)",
-        "dest": "/public/$1"
-      }
+      { "src": "/validate-username", "dest": "api/server.js" }
     ]
-  }
-  
+}  
