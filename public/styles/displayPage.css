@@ -46,8 +46,6 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--body-bg-color);
     color: var(--text-color);
-    line-height: 1.6;
-    padding: 20px;
 }
 
 main {

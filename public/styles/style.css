@@ -1,5 +1,5 @@
-:root {
-    /* Colors */
+:root.dark-mode {
+    /* Dark Mode Colors */
     --body-bg-color: #FAFAFA;
     --logo-color: #333333;
     --logo-color2: #0366d6;
@@ -18,22 +18,10 @@
     --footer-text-color-hover: #000000;  
     --button-color-hover: #FF9900; 
     --secondary-text-color: #757575;
-
-    /* Spacing */
-    --container-padding: 16px;
-    --section-spacing: 32px;
-    --input-spacing: 12px;
-    --footer-spacing: 20px;
-
-    /* Sizing */
-    --max-width: 1200px;
-    --button-height: 48px;
-    --input-height: 35px;
-    --footer-font-size: 0.82rem;
 }
 
-:root.dark-mode {
-     /* Dark Mode Colors */
+:root {
+    /* Colors */
      --body-bg-color: #121212;
      --logo-color: #E0E0E0;
      --header-bottom-border-color: #333333;
@@ -50,6 +38,18 @@
      --footer-text-color: #999999;
      --footer-text-color-hover: #FFFFFF;  
      --secondary-text-color: #AAAAAA;
+
+    /* Spacing */
+    --container-padding: 16px;
+    --section-spacing: 32px;
+    --input-spacing: 12px;
+    --footer-spacing: 20px;
+
+    /* Sizing */
+    --max-width: 1200px;
+    --button-height: 48px;
+    --input-height: 35px;
+    --footer-font-size: 0.82rem;
 }
 
 * {
@@ -345,7 +345,7 @@ footer p {
        
     .bottom-p-tag {
         color: var(--p-header-popUp);
-        text-align: center;
+        text-align: left;
         font-size: 0.53rem;
         display: flex;
         justify-content: flex-start;
