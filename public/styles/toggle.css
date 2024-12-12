@@ -1,5 +1,5 @@
 /* Toggle mode styling */
-body.dark-mode {
+html.dark-mode {
     background-color: var(--body-bg-color);
     color: #fff;
   }

@@ -1,15 +1,15 @@
 // Apply saved theme on page load
 document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem("theme") || "dark"; // Default to dark mode
-    document.body.classList.add(savedTheme === "dark" ? "dark-mode" : "light-mode");
+    document.documentElement.classList.toggle("dark-mode", savedTheme === "dark");
     document.getElementById("darkMode-button").checked = (savedTheme === "dark");
 });
 
 // Toggle dark mode functionality
 function toggleDarkMode() {
     const isDarkMode = document.documentElement.classList.toggle("dark-mode");
-    document.body.classList.toggle("light-mode", !isDarkMode);
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    const theme = isDarkMode ? "dark" : "light";
+    localStorage.setItem("theme", theme);
 }
 
 
@@ -86,11 +86,18 @@ document.getElementById("usernameForm").addEventListener("submit", async (event)
             showError('Something went wrong. Please try again later.');
         }
     } finally {
-        // Reset input state regardless of success/failure
-        usernameInput.disabled = false;
-        usernameInput.style.filter = "none";
-        usernameInput.value = "";
-        usernameInput.placeholder = "Enter your GitHub username...";
+        // Reset input fields state regardless of success/failure in the background
+        resetInputField(usernameInput, submitButton);
     }
 });
 
+// Reset the input field and submit button
+function resetInputField(input, button) {
+    setTimeout(() => {
+        input.disabled = false;
+        input.style.filter = "none";
+        input.value = "";
+        input.placeholder = "Enter your GitHub username...";
+        button.disabled = false;
+    }, 1000); // A slight delay to simulate smooth clearing in the background
+}
